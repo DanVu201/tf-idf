@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 public class TF_Map extends Mapper<LongWritable, Text, Text, IntWritable> {
     private final IntWritable one = new IntWritable(1);
     private static final Pattern WORD_BOUNDARY = Pattern.compile("\\s*\\b\\s*");
-    @Override
     public void map(LongWritable offset, Text lineText, Context context) throws IOException, InterruptedException {
         String line = lineText.toString();
         String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
